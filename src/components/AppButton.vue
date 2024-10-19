@@ -1,5 +1,7 @@
 <template>
-  <button class="btn" :style="{ backgroundColor: color }">{{ label }}</button>
+  <button @click="onClick()" class="btn" :style="{ backgroundColor: color }">
+    {{ label }}
+  </button>
 </template>
 
 <script lang="ts">
@@ -14,16 +16,10 @@ export default {
       default: 'green',
     },
   },
+  methods: {
+    onClick() {
+      console.log('click')
+    },
+  },
 }
 </script>
-
-<style scoped>
-.btn {
-  display: inline-block;
-  background: #ad1010;
-  color: #eee;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-}
-</style>

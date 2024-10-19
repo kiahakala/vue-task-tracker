@@ -9,5 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppButton: typeof import('./src/components/AppButton.vue')['default']
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    TaskItem: typeof import('./src/components/TaskItem.vue')['default']
+    TaskList: typeof import('./src/components/TaskList.vue')['default']
+    Tasks: typeof import('./src/components/Tasks.vue')['default']
   }
 }

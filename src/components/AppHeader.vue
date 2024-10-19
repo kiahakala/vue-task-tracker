@@ -1,8 +1,8 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
+    <AppButton label="Add Task" color="forestgreen" />
   </header>
-  <AppButton label="Add Task" color="green" />
 </template>
 
 <script lang="ts">

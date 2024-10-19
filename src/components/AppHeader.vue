@@ -2,6 +2,7 @@
   <header>
     <h1>{{ title }}</h1>
   </header>
+  <AppButton label="Add Task" color="green" />
 </template>
 
 <script lang="ts">

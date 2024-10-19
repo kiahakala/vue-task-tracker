@@ -1,6 +1,13 @@
 <template>
   <div class="container">
-    <AppHeader title="Task Tracker" />
+    <AppHeader
+      @toggle-add-task="toggleAddTask"
+      title="Task Tracker"
+      :showAddTask="showAddTask"
+    />
+    <div v-if="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
     <TaskList
       @toggle-reminder="toggleReminder"
       @delete-task="deleteTask"
@@ -14,9 +21,16 @@ export default {
   data() {
     return {
       tasks: [],
+      showAddTask: false,
     }
   },
   methods: {
+    toggleAddTask() {
+      this.showAddTask = !this.showAddTask
+    },
+    addTask(task) {
+      this.tasks = [...this.tasks, task]
+    },
     deleteTask(id) {
       this.tasks = this.tasks.filter(task => task.id !== id)
     },
@@ -66,11 +80,11 @@ export default {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: var(--vt-c-indigo);
   color: #eee;
   border: none;
   border-radius: 8px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
 }
 
 .btn:focus {
@@ -79,6 +93,11 @@ export default {
 
 .btn:active {
   transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
 }
 
 @media (min-width: 1024px) {

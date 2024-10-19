@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AddTask: typeof import('./src/components/AddTask.vue')['default']
     AppButton: typeof import('./src/components/AppButton.vue')['default']
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
     TaskItem: typeof import('./src/components/TaskItem.vue')['default']
